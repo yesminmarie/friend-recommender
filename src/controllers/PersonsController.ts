@@ -2,7 +2,7 @@ import { Response, Request } from "express";
 
 import { PersonsRepository } from "../repositories/implementations/PersonsRepository";
 import { CreatePersonService } from "../services/CreatePersonService";
-import { ListPersonService } from "../services/ListPersonService";
+import { ShowPersonService } from "../services/ShowPersonService";
 
 const personsRepository = new PersonsRepository();
 class PersonsController {
@@ -27,9 +27,9 @@ class PersonsController {
         try {
             const { cpf } = request.params;
 
-            const listPersonService = new ListPersonService(personsRepository);
+            const showPersonService = new ShowPersonService(personsRepository);
 
-            const person = listPersonService.execute({ cpf });
+            const person = showPersonService.execute({ cpf });
 
             return response.json(person);
         } catch (err) {

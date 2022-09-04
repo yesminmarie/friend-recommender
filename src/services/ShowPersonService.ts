@@ -5,7 +5,7 @@ interface IRequest {
     cpf: string;
 }
 
-class ListPersonService {
+class ShowPersonService {
     constructor(private personsRepository: IPersonsRepository) {}
 
     execute({ cpf }: IRequest): Person {
@@ -19,4 +19,4 @@ class ListPersonService {
     }
 }
 
-export { ListPersonService };
+export { ShowPersonService };
