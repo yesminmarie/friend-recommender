@@ -5,8 +5,8 @@ class Person {
     cpf: string;
     name: string;
 
-    constructor(){
-        if(!this.id){
+    constructor() {
+        if (!this.id) {
             this.id = uuidV4();
         }
     }

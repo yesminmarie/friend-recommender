@@ -1,18 +1,15 @@
 import { Response, Request } from "express";
+import { container } from "tsyringe";
 
-import { PersonsRepository } from "../repositories/implementations/PersonsRepository";
 import { CreatePersonService } from "../services/CreatePersonService";
 import { ShowPersonService } from "../services/ShowPersonService";
 
-const personsRepository = new PersonsRepository();
 class PersonsController {
     public create(request: Request, response: Response): Response {
         try {
             const { cpf, name } = request.body;
 
-            const createPersonService = new CreatePersonService(
-                personsRepository
-            );
+            const createPersonService = container.resolve(CreatePersonService);
             createPersonService.execute({ cpf, name });
 
             return response.status(201).send();
@@ -27,7 +24,7 @@ class PersonsController {
         try {
             const { cpf } = request.params;
 
-            const showPersonService = new ShowPersonService(personsRepository);
+            const showPersonService = container.resolve(ShowPersonService);
 
             const person = showPersonService.execute({ cpf });
 

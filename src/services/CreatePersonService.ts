@@ -1,3 +1,5 @@
+import { injectable, inject } from "tsyringe";
+
 import { IPersonsRepository } from "../repositories/IPersonsRepository";
 
 interface IRequest {
@@ -5,8 +7,12 @@ interface IRequest {
     name: string;
 }
 
+@injectable()
 class CreatePersonService {
-    constructor(private personsRepository: IPersonsRepository) {}
+    constructor(
+        @inject("PersonsRepository")
+        private personsRepository: IPersonsRepository
+    ) {}
 
     execute({ cpf, name }: IRequest): void {
         const personAlreadyExists = this.personsRepository.findByCpf(cpf);
