@@ -25,6 +25,9 @@ class PersonsRepository implements IPersonsRepository {
 
         this.persons.push(person);
     }
+    delete(): void {
+        this.persons.splice(0, this.persons.length);
+    }
 }
 
 export { PersonsRepository };

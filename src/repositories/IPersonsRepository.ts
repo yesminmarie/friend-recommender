@@ -8,6 +8,7 @@ interface ICreatePersonRepositoryDTO {
 interface IPersonsRepository {
     findByCpf(cpf: string): Person;
     create({ cpf, name }: ICreatePersonRepositoryDTO): void;
+    delete(): void;
 }
 
 export { IPersonsRepository, ICreatePersonRepositoryDTO };

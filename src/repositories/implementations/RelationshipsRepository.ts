@@ -21,6 +21,10 @@ class RelationshipsRepository implements IRelationshipsRepository {
 
         this.relationships.push(relationship);
     }
+
+    delete(): void {
+        this.relationships.splice(0, this.relationships.length);
+    }
 }
 
 export { RelationshipsRepository };

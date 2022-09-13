@@ -7,6 +7,7 @@ interface ICreateRelationshipRepositoryDTO {
 
 interface IRelationshipsRepository {
     create({ cpf1, cpf2 }: ICreateRelationshipRepositoryDTO): void;
+    delete(): void;
 }
 
 export { IRelationshipsRepository, ICreateRelationshipRepositoryDTO };
