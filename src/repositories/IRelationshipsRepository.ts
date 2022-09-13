@@ -1,5 +1,3 @@
-import { Person } from "../model/Person";
-
 interface ICreateRelationshipRepositoryDTO {
     cpf1: string;
     cpf2: string;
