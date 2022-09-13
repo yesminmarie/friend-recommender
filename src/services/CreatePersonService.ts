@@ -21,7 +21,9 @@ class CreatePersonService {
             throw new Error("User already exists!");
         }
 
-        if (cpf.length !== 11) {
+        const regex = /^[0-9]{11}$/;
+
+        if (!regex.test(cpf)) {
             throw new Error(
                 "The informed cpf does not have 11 numeric digits!"
             );
