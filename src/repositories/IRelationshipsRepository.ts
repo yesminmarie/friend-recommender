@@ -4,8 +4,11 @@ interface ICreateRelationshipRepositoryDTO {
 }
 
 interface IRelationshipsRepository {
+    getRecommendations(cpf: string): string[];
     create({ cpf1, cpf2 }: ICreateRelationshipRepositoryDTO): void;
     delete(): void;
+    getCpfFriends(cpf: string): string[];
+    getCpfRelationshipsFriends(cpfFriends: string[], cpf: string): string[];
 }
 
 export { IRelationshipsRepository, ICreateRelationshipRepositoryDTO };

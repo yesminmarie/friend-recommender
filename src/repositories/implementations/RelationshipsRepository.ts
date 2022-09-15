@@ -25,6 +25,59 @@ class RelationshipsRepository implements IRelationshipsRepository {
     delete(): void {
         this.relationships.splice(0, this.relationships.length);
     }
+
+    getRecommendations(cpf: string): string[] {
+        const cpfFriends = this.getCpfFriends(cpf);
+
+        const cpfRelationshipsFriends = this.getCpfRelationshipsFriends(
+            cpfFriends,
+            cpf
+        );
+
+        return cpfRelationshipsFriends;
+    }
+
+    getCpfFriends(cpf: string): string[] {
+        const friends = this.relationships
+            .filter(
+                (relationship) =>
+                    relationship.cpf1 === cpf || relationship.cpf2 === cpf
+            )
+            .map((relationship) =>
+                relationship.cpf1 !== cpf
+                    ? relationship.cpf1
+                    : relationship.cpf2
+            );
+        return friends;
+    }
+
+    getCpfRelationshipsFriends(cpfFriends: string[], cpf: string): string[] {
+        let cpfRelationshipsFriends = [];
+
+        cpfFriends.forEach((cpfFriend) => {
+            const cpfFriendRelationship = this.relationships
+                .filter(
+                    (relationship) =>
+                        relationship.cpf1 === cpfFriend ||
+                        relationship.cpf2 === cpfFriend
+                )
+                .map((relationship) =>
+                    relationship.cpf1 !== cpfFriend
+                        ? relationship.cpf1
+                        : relationship.cpf2
+                )
+                .filter(
+                    (cpfRelationship) =>
+                        cpfRelationship !== cpf &&
+                        !cpfFriends.includes(cpfRelationship)
+                );
+            cpfRelationshipsFriends = [
+                ...cpfRelationshipsFriends,
+                ...cpfFriendRelationship,
+            ];
+        });
+        return cpfRelationshipsFriends;
+    }
 }
 
 export { RelationshipsRepository };
