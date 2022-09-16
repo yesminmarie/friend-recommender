@@ -9,6 +9,7 @@ interface IRelationshipsRepository {
     delete(): void;
     getCpfFriends(cpf: string): string[];
     getCpfRelationshipsFriends(cpfFriends: string[], cpf: string): string[];
+    sortByRelevance(cpfRelationshipsFriends: string[]): string[];
 }
 
 export { IRelationshipsRepository, ICreateRelationshipRepositoryDTO };

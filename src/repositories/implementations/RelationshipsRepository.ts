@@ -34,7 +34,11 @@ class RelationshipsRepository implements IRelationshipsRepository {
             cpf
         );
 
-        return cpfRelationshipsFriends;
+        const cpfSortedByRelevance = this.sortByRelevance(
+            cpfRelationshipsFriends
+        );
+
+        return cpfSortedByRelevance;
     }
 
     getCpfFriends(cpf: string): string[] {
@@ -77,6 +81,24 @@ class RelationshipsRepository implements IRelationshipsRepository {
             ];
         });
         return cpfRelationshipsFriends;
+    }
+
+    sortByRelevance(cpfRelationshipsFriends: string[]): string[] {
+        const countedCpf = cpfRelationshipsFriends.reduce(
+            (accumulator, cpf) => {
+                accumulator[cpf] = (accumulator[cpf] ?? 0) + 1;
+                return accumulator;
+            },
+            {}
+        );
+
+        const sortedRecommendations = Object.keys(countedCpf).sort(
+            (cpf1, cpf2) => {
+                return countedCpf[cpf2] - countedCpf[cpf1];
+            }
+        );
+
+        return sortedRecommendations;
     }
 }
 
