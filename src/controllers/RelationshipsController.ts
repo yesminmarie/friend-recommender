@@ -4,7 +4,10 @@ import { container } from "tsyringe";
 import { CreateRelationshipService } from "../services/CreateRelationshipService";
 
 class RelationshipsController {
-    public create(request: Request, response: Response): Response {
+    public async create(
+        request: Request,
+        response: Response
+    ): Promise<Response> {
         try {
             const { cpf1, cpf2 } = request.body;
 
@@ -12,9 +15,12 @@ class RelationshipsController {
                 CreateRelationshipService
             );
 
-            createRelationshipService.execute({ cpf1, cpf2 });
+            const relationship = await createRelationshipService.execute({
+                cpf1,
+                cpf2,
+            });
 
-            return response.status(201).send();
+            return response.status(201).json(relationship);
         } catch (err) {
             return response.status(404).json({
                 error: err.message,

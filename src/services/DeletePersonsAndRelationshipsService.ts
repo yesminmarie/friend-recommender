@@ -13,7 +13,7 @@ class DeletePersonsAndRelationshipsService {
         private relationshipRepository: IRelationshipsRepository
     ) {}
 
-    execute(): void {
+    public async execute(): Promise<void> {
         this.personsRepository.delete();
         this.relationshipRepository.delete();
     }

@@ -17,8 +17,8 @@ class ShowRecommendationsService {
         private relationshipRepository: IRelationshipsRepository
     ) {}
 
-    execute({ cpf }: IRequest): string[] {
-        const personAlreadyExists = this.personsRepository.findByCpf(cpf);
+    public async execute({ cpf }: IRequest): Promise<string[]> {
+        const personAlreadyExists = await this.personsRepository.findByCpf(cpf);
 
         const regex = /^[0-9]{11}$/;
 
@@ -32,7 +32,7 @@ class ShowRecommendationsService {
         }
 
         const relationshipsOfCpf =
-            this.relationshipRepository.getRecommendations(cpf);
+            await this.relationshipRepository.getRecommendations(cpf);
         return relationshipsOfCpf;
     }
 }

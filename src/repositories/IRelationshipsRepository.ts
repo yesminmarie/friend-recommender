@@ -1,3 +1,5 @@
+import { Relationship } from "../model/Relationship";
+
 interface ICreateRelationshipRepositoryDTO {
     cpf1: string;
     cpf2: string;
@@ -5,8 +7,11 @@ interface ICreateRelationshipRepositoryDTO {
 
 interface IRelationshipsRepository {
     getRecommendations(cpf: string): string[];
-    create({ cpf1, cpf2 }: ICreateRelationshipRepositoryDTO): void;
-    delete(): void;
+    create({
+        cpf1,
+        cpf2,
+    }: ICreateRelationshipRepositoryDTO): Promise<Relationship>;
+    delete(): Promise<void>;
     getCpfFriends(cpf: string): string[];
     getCpfRelationshipsFriends(cpfFriends: string[], cpf: string): string[];
     sortByRelevance(cpfRelationshipsFriends: string[]): string[];

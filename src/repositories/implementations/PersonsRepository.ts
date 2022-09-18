@@ -11,11 +11,14 @@ class PersonsRepository implements IPersonsRepository {
         this.persons = [];
     }
 
-    findByCpf(cpf: string): Person {
+    public async findByCpf(cpf: string): Promise<Person | undefined> {
         const person = this.persons.find((person) => person.cpf === cpf);
         return person;
     }
-    create({ cpf, name }: ICreatePersonRepositoryDTO): void {
+    public async create({
+        cpf,
+        name,
+    }: ICreatePersonRepositoryDTO): Promise<Person> {
         const person = new Person();
 
         Object.assign(person, {
@@ -24,8 +27,10 @@ class PersonsRepository implements IPersonsRepository {
         });
 
         this.persons.push(person);
+
+        return person;
     }
-    delete(): void {
+    public async delete(): Promise<void> {
         this.persons.splice(0, this.persons.length);
     }
 }

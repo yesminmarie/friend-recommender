@@ -1,5 +1,7 @@
+import "reflect-metadata";
 import { injectable, inject } from "tsyringe";
 
+import { Relationship } from "../model/Relationship";
 import { IPersonsRepository } from "../repositories/IPersonsRepository";
 import { IRelationshipsRepository } from "../repositories/IRelationshipsRepository";
 
@@ -18,15 +20,23 @@ class CreateRelationshipService {
         private relationshipRepository: IRelationshipsRepository
     ) {}
 
-    execute({ cpf1, cpf2 }: IRequest): void {
-        const personAlreadyExistsCpf1 = this.personsRepository.findByCpf(cpf1);
-        const personAlreadyExistsCpf2 = this.personsRepository.findByCpf(cpf2);
+    public async execute({ cpf1, cpf2 }: IRequest): Promise<Relationship> {
+        const personAlreadyExistsCpf1 = await this.personsRepository.findByCpf(
+            cpf1
+        );
+        const personAlreadyExistsCpf2 = await this.personsRepository.findByCpf(
+            cpf2
+        );
 
         if (!personAlreadyExistsCpf1 || !personAlreadyExistsCpf2) {
             throw new Error("User not found!");
         }
 
-        this.relationshipRepository.create({ cpf1, cpf2 });
+        const relationship = await this.relationshipRepository.create({
+            cpf1,
+            cpf2,
+        });
+        return relationship;
     }
 }
 

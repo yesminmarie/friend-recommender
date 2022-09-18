@@ -4,7 +4,10 @@ import { container } from "tsyringe";
 import { DeletePersonsAndRelationshipsService } from "../services/DeletePersonsAndRelationshipsService";
 
 class PersonsAndRelationshipsController {
-    public clean(request: Request, response: Response): Response {
+    public async clean(
+        request: Request,
+        response: Response
+    ): Promise<Response> {
         try {
             const deletePersonsAndRelationships = container.resolve(
                 DeletePersonsAndRelationshipsService

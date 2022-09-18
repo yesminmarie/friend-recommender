@@ -11,7 +11,10 @@ class RelationshipsRepository implements IRelationshipsRepository {
         this.relationships = [];
     }
 
-    create({ cpf1, cpf2 }: ICreateRelationshipRepositoryDTO): void {
+    public async create({
+        cpf1,
+        cpf2,
+    }: ICreateRelationshipRepositoryDTO): Promise<Relationship> {
         const relationship = new Relationship();
 
         Object.assign(relationship, {
@@ -20,9 +23,11 @@ class RelationshipsRepository implements IRelationshipsRepository {
         });
 
         this.relationships.push(relationship);
+
+        return relationship;
     }
 
-    delete(): void {
+    public async delete(): Promise<void> {
         this.relationships.splice(0, this.relationships.length);
     }
 

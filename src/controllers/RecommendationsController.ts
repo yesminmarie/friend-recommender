@@ -4,7 +4,10 @@ import { container } from "tsyringe";
 import { ShowRecommendationsService } from "../services/ShowRecommendationsService";
 
 class RecommendationsController {
-    public getRecommendations(request: Request, response: Response): Response {
+    public async getRecommendations(
+        request: Request,
+        response: Response
+    ): Promise<Response> {
         try {
             const { cpf } = request.params;
 
@@ -12,7 +15,9 @@ class RecommendationsController {
                 ShowRecommendationsService
             );
 
-            const recommendations = showRecommendationsService.execute({ cpf });
+            const recommendations = await showRecommendationsService.execute({
+                cpf,
+            });
 
             return response.json(recommendations);
         } catch (err) {

@@ -6,9 +6,9 @@ interface ICreatePersonRepositoryDTO {
 }
 
 interface IPersonsRepository {
-    findByCpf(cpf: string): Person;
-    create({ cpf, name }: ICreatePersonRepositoryDTO): void;
-    delete(): void;
+    findByCpf(cpf: string): Promise<Person | undefined>;
+    create({ cpf, name }: ICreatePersonRepositoryDTO): Promise<Person>;
+    delete(): Promise<void>;
 }
 
 export { IPersonsRepository, ICreatePersonRepositoryDTO };

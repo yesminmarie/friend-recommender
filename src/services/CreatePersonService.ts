@@ -1,5 +1,7 @@
+import "reflect-metadata";
 import { injectable, inject } from "tsyringe";
 
+import { Person } from "../model/Person";
 import { IPersonsRepository } from "../repositories/IPersonsRepository";
 
 interface IRequest {
@@ -14,8 +16,8 @@ class CreatePersonService {
         private personsRepository: IPersonsRepository
     ) {}
 
-    execute({ cpf, name }: IRequest): void {
-        const personAlreadyExists = this.personsRepository.findByCpf(cpf);
+    public async execute({ cpf, name }: IRequest): Promise<Person> {
+        const personAlreadyExists = await this.personsRepository.findByCpf(cpf);
 
         if (personAlreadyExists) {
             throw new Error("User already exists!");
@@ -29,7 +31,9 @@ class CreatePersonService {
             );
         }
 
-        this.personsRepository.create({ cpf, name });
+        const person = await this.personsRepository.create({ cpf, name });
+
+        return person;
     }
 }
 

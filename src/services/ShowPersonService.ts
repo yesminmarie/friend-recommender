@@ -14,8 +14,8 @@ class ShowPersonService {
         private personsRepository: IPersonsRepository
     ) {}
 
-    execute({ cpf }: IRequest): Person {
-        const personAlreadyExists = this.personsRepository.findByCpf(cpf);
+    public async execute({ cpf }: IRequest): Promise<Person> {
+        const personAlreadyExists = await this.personsRepository.findByCpf(cpf);
 
         if (!personAlreadyExists) {
             throw new Error("User not found!");
