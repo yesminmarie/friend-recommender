@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663529031539" clover="3.2.0">
-  <project timestamp="1663529031539" name="All files">
-    <metrics statements="570" coveredstatements="389" conditionals="22" coveredconditionals="22" methods="26" coveredmethods="14" elements="618" coveredelements="425" complexity="0" loc="570" ncloc="570" packages="7" files="20" classes="20"/>
+<coverage generated="1663530266492" clover="3.2.0">
+  <project timestamp="1663530266493" name="All files">
+    <metrics statements="572" coveredstatements="402" conditionals="25" coveredconditionals="25" methods="26" coveredmethods="16" elements="623" coveredelements="443" complexity="0" loc="572" ncloc="572" packages="7" files="20" classes="20"/>
     <package name="src">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\app.ts">
@@ -227,28 +227,28 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="9" type="stmt"/>
-        <line num="12" count="9" type="stmt"/>
+        <line num="11" count="11" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="13" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="13" type="stmt"/>
-        <line num="17" count="13" type="stmt"/>
+        <line num="15" count="15" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="15" type="stmt"/>
+        <line num="17" count="15" type="stmt"/>
         <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="19" count="9" type="stmt"/>
-        <line num="20" count="9" type="stmt"/>
-        <line num="21" count="9" type="stmt"/>
-        <line num="22" count="9" type="stmt"/>
-        <line num="23" count="9" type="stmt"/>
-        <line num="24" count="9" type="stmt"/>
-        <line num="25" count="9" type="stmt"/>
-        <line num="26" count="9" type="stmt"/>
-        <line num="27" count="9" type="stmt"/>
-        <line num="28" count="9" type="stmt"/>
-        <line num="29" count="9" type="stmt"/>
-        <line num="30" count="9" type="stmt"/>
-        <line num="31" count="9" type="stmt"/>
-        <line num="32" count="9" type="stmt"/>
+        <line num="19" count="10" type="stmt"/>
+        <line num="20" count="10" type="stmt"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="24" count="10" type="stmt"/>
+        <line num="25" count="10" type="stmt"/>
+        <line num="26" count="10" type="stmt"/>
+        <line num="27" count="10" type="stmt"/>
+        <line num="28" count="10" type="stmt"/>
+        <line num="29" count="10" type="stmt"/>
+        <line num="30" count="10" type="stmt"/>
+        <line num="31" count="10" type="stmt"/>
+        <line num="32" count="10" type="stmt"/>
         <line num="33" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="34" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
@@ -461,7 +461,7 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="175" coveredstatements="141" conditionals="10" coveredconditionals="10" methods="10" coveredmethods="6"/>
+      <metrics statements="177" coveredstatements="154" conditionals="13" coveredconditionals="13" methods="10" coveredmethods="8"/>
       <file name="CreatePersonService.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\services\CreatePersonService.ts">
         <metrics statements="40" coveredstatements="40" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -579,7 +579,7 @@
         <line num="24" count="1" type="stmt"/>
       </file>
       <file name="ShowPersonService.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\services\ShowPersonService.ts">
-        <metrics statements="28" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <metrics statements="30" coveredstatements="30" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -592,22 +592,24 @@
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="13" count="0" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
-        <line num="15" count="0" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="0" type="stmt"/>
-        <line num="24" count="0" type="stmt"/>
-        <line num="25" count="0" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
       </file>
       <file name="ShowRecommendationsService.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\services\ShowRecommendationsService.ts">
         <metrics statements="40" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
