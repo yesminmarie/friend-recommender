@@ -6,15 +6,12 @@ interface ICreateRelationshipRepositoryDTO {
 }
 
 interface IRelationshipsRepository {
-    getRecommendations(cpf: string): string[];
+    getRecommendations(cpf: string): Promise<string[]>;
     create({
         cpf1,
         cpf2,
     }: ICreateRelationshipRepositoryDTO): Promise<Relationship>;
     delete(): Promise<void>;
-    getCpfFriends(cpf: string): string[];
-    getCpfRelationshipsFriends(cpfFriends: string[], cpf: string): string[];
-    sortByRelevance(cpfRelationshipsFriends: string[]): string[];
 }
 
 export { IRelationshipsRepository, ICreateRelationshipRepositoryDTO };

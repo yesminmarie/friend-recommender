@@ -31,7 +31,7 @@ class RelationshipsRepository implements IRelationshipsRepository {
         this.relationships.splice(0, this.relationships.length);
     }
 
-    getRecommendations(cpf: string): string[] {
+    public async getRecommendations(cpf: string): Promise<string[]> {
         const cpfFriends = this.getCpfFriends(cpf);
 
         const cpfRelationshipsFriends = this.getCpfRelationshipsFriends(
@@ -46,7 +46,7 @@ class RelationshipsRepository implements IRelationshipsRepository {
         return cpfSortedByRelevance;
     }
 
-    getCpfFriends(cpf: string): string[] {
+    private getCpfFriends(cpf: string): string[] {
         const friends = this.relationships
             .filter(
                 (relationship) =>
@@ -60,7 +60,10 @@ class RelationshipsRepository implements IRelationshipsRepository {
         return friends;
     }
 
-    getCpfRelationshipsFriends(cpfFriends: string[], cpf: string): string[] {
+    private getCpfRelationshipsFriends(
+        cpfFriends: string[],
+        cpf: string
+    ): string[] {
         let cpfRelationshipsFriends = [];
 
         cpfFriends.forEach((cpfFriend) => {
@@ -88,7 +91,7 @@ class RelationshipsRepository implements IRelationshipsRepository {
         return cpfRelationshipsFriends;
     }
 
-    sortByRelevance(cpfRelationshipsFriends: string[]): string[] {
+    private sortByRelevance(cpfRelationshipsFriends: string[]): string[] {
         const countedCpf = cpfRelationshipsFriends.reduce(
             (accumulator, cpf) => {
                 accumulator[cpf] = (accumulator[cpf] ?? 0) + 1;
