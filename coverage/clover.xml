@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663548344556" clover="3.2.0">
-  <project timestamp="1663548344556" name="All files">
-    <metrics statements="576" coveredstatements="496" conditionals="53" coveredconditionals="52" methods="26" coveredmethods="22" elements="655" coveredelements="570" complexity="0" loc="576" ncloc="576" packages="7" files="20" classes="20"/>
+<coverage generated="1663549472924" clover="3.2.0">
+  <project timestamp="1663549472924" name="All files">
+    <metrics statements="576" coveredstatements="514" conditionals="54" coveredconditionals="53" methods="26" coveredmethods="23" elements="656" coveredelements="590" complexity="0" loc="576" ncloc="576" packages="7" files="20" classes="20"/>
     <package name="src">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\app.ts">
@@ -44,7 +44,7 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="134" coveredstatements="58" conditionals="3" coveredconditionals="3" methods="5" coveredmethods="1"/>
+      <metrics statements="134" coveredstatements="75" conditionals="5" coveredconditionals="5" methods="5" coveredmethods="2"/>
       <file name="PersonsAndRelationshipsController.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\controllers\PersonsAndRelationshipsController.ts">
         <metrics statements="26" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -75,7 +75,7 @@
         <line num="26" count="1" type="stmt"/>
       </file>
       <file name="PersonsController.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\controllers\PersonsController.ts">
-        <metrics statements="45" coveredstatements="28" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="1"/>
+        <metrics statements="45" coveredstatements="45" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -84,41 +84,41 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="4" type="stmt"/>
-        <line num="10" count="4" type="stmt"/>
-        <line num="11" count="4" type="stmt"/>
-        <line num="12" count="4" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="stmt"/>
-        <line num="15" count="4" type="stmt"/>
-        <line num="16" count="4" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="3" type="stmt"/>
         <line num="17" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="19" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="3" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="22" count="3" type="stmt"/>
-        <line num="23" count="3" type="stmt"/>
-        <line num="24" count="4" type="stmt"/>
+        <line num="19" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="3" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="0" type="stmt"/>
-        <line num="28" count="0" type="stmt"/>
-        <line num="29" count="0" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
-        <line num="32" count="0" type="stmt"/>
-        <line num="33" count="0" type="stmt"/>
-        <line num="34" count="0" type="stmt"/>
-        <line num="35" count="0" type="stmt"/>
-        <line num="36" count="0" type="stmt"/>
-        <line num="37" count="0" type="stmt"/>
-        <line num="38" count="0" type="stmt"/>
-        <line num="39" count="0" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="0" type="stmt"/>
-        <line num="42" count="0" type="stmt"/>
-        <line num="43" count="0" type="stmt"/>
+        <line num="26" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="2" type="stmt"/>
+        <line num="28" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+        <line num="30" count="2" type="stmt"/>
+        <line num="31" count="2" type="stmt"/>
+        <line num="32" count="2" type="stmt"/>
+        <line num="33" count="2" type="stmt"/>
+        <line num="34" count="2" type="stmt"/>
+        <line num="35" count="2" type="stmt"/>
+        <line num="36" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="37" count="1" type="stmt"/>
+        <line num="38" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="stmt"/>
+        <line num="43" count="2" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
         <line num="45" count="1" type="stmt"/>
       </file>
@@ -231,9 +231,9 @@
         <line num="12" count="14" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="19" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="19" type="stmt"/>
-        <line num="17" count="19" type="stmt"/>
+        <line num="15" count="20" type="cond" truecount="1" falsecount="0"/>
+        <line num="16" count="20" type="stmt"/>
+        <line num="17" count="20" type="stmt"/>
         <line num="18" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="19" count="15" type="stmt"/>
         <line num="20" count="15" type="stmt"/>
@@ -374,7 +374,7 @@
       </file>
     </package>
     <package name="src.routes">
-      <metrics statements="72" coveredstatements="68" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+      <metrics statements="72" coveredstatements="69" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
       <file name="cleanPersonsAndRelationships.routes.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\routes\cleanPersonsAndRelationships.routes.ts">
         <metrics statements="14" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -411,7 +411,7 @@
         <line num="15" count="1" type="stmt"/>
       </file>
       <file name="person.routes.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\routes\person.routes.ts">
-        <metrics statements="17" coveredstatements="16" conditionals="1" coveredconditionals="1" methods="0" coveredmethods="0"/>
+        <metrics statements="17" coveredstatements="17" conditionals="2" coveredconditionals="2" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -421,11 +421,11 @@
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="4" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="0" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="2" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
@@ -464,9 +464,9 @@
       </file>
     </package>
     <package name="src.services">
-      <metrics statements="178" coveredstatements="178" conditionals="21" coveredconditionals="21" methods="10" coveredmethods="10"/>
+      <metrics statements="178" coveredstatements="178" conditionals="19" coveredconditionals="19" methods="10" coveredmethods="10"/>
       <file name="CreatePersonService.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\services\CreatePersonService.ts">
-        <metrics statements="40" coveredstatements="40" conditionals="8" coveredconditionals="8" methods="2" coveredmethods="2"/>
+        <metrics statements="40" coveredstatements="40" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -481,20 +481,20 @@
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="9" type="stmt"/>
-        <line num="16" count="9" type="stmt"/>
-        <line num="17" count="9" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="10" type="stmt"/>
-        <line num="21" count="10" type="stmt"/>
-        <line num="22" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="23" count="3" type="stmt"/>
-        <line num="24" count="3" type="stmt"/>
+        <line num="20" count="9" type="stmt"/>
+        <line num="21" count="9" type="stmt"/>
+        <line num="22" count="9" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
         <line num="25" count="7" type="cond" truecount="1" falsecount="0"/>
         <line num="26" count="7" type="stmt"/>
         <line num="27" count="7" type="stmt"/>
-        <line num="28" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="7" type="cond" truecount="1" falsecount="0"/>
         <line num="29" count="4" type="stmt"/>
         <line num="30" count="4" type="stmt"/>
         <line num="31" count="4" type="stmt"/>
@@ -597,19 +597,19 @@
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="15" count="2" type="stmt"/>
-        <line num="16" count="2" type="stmt"/>
-        <line num="17" count="2" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="4" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="21" count="2" type="stmt"/>
-        <line num="22" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
-        <line num="27" count="1" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
+        <line num="27" count="2" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
         <line num="30" count="1" type="stmt"/>

@@ -13,11 +13,6 @@ describe("Create Person Controller", () => {
     });
 
     it("Should not be able to create an existing person", async () => {
-        await request(app).post("/person").send({
-            cpf: "12345678901",
-            name: "Maria",
-        });
-
         const response = await request(app).post("/person").send({
             cpf: "12345678901",
             name: "Maria",
@@ -37,5 +32,15 @@ describe("Create Person Controller", () => {
         expect(response.body).toEqual({
             error: "The informed cpf does not have 11 numeric digits!",
         });
+    });
+
+    it("Should be able to show the person", async () => {
+        const response = await request(app).get("/person/12345678901").send();
+        expect(response.status).toBe(200);
+    });
+
+    it("Should not be able to show the person from non-existing cpf", async () => {
+        const response = await request(app).get("/person/12345678902").send();
+        expect(response.status).toBe(404);
     });
 });
