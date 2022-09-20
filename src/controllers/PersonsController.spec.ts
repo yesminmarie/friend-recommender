@@ -2,7 +2,7 @@ import request from "supertest";
 
 import { app } from "../app";
 
-describe("Create Person Controller", () => {
+describe("Person Controller", () => {
     it("Should be able to create a new person", async () => {
         const response = await request(app).post("/person").send({
             cpf: "12345678901",
