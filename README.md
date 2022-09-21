@@ -78,7 +78,7 @@
 
 ```
 
-<h1 id="technologies">Tecnologias</h1>
+<h1>Tecnologias</h1>
 
 <p>Foram utilizadas as seguintes tecnologias no projeto:</p>
 
