@@ -2,7 +2,7 @@
 
 <p align="center">Este projeto consiste em um recomendador de amigos no qual uma pessoa pode obter sugestões de novos amigos se baseando nas amizades já existentes.</p>
 
-<h1 id="technologies">Rotas implementadas:</h1>
+<h1>Rotas implementadas:</h1>
 
 <h2> Create Person </h2>
 
@@ -78,7 +78,7 @@
 
 ```
 
-<h1 id="technologies">:rocket: Tecnologias</h1>
+<h1 id="technologies">Tecnologias</h1>
 
 <p>Foram utilizadas as seguintes tecnologias no projeto:</p>
 
