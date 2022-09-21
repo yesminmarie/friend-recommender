@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663708577324" clover="3.2.0">
-  <project timestamp="1663708577324" name="All files">
-    <metrics statements="576" coveredstatements="572" conditionals="65" coveredconditionals="63" methods="26" coveredmethods="26" elements="667" coveredelements="661" complexity="0" loc="576" ncloc="576" packages="7" files="20" classes="20"/>
+<coverage generated="1663768060245" clover="3.2.0">
+  <project timestamp="1663768060246" name="All files">
+    <metrics statements="570" coveredstatements="570" conditionals="65" coveredconditionals="65" methods="26" coveredmethods="26" elements="661" coveredelements="661" complexity="0" loc="570" ncloc="570" packages="7" files="20" classes="20"/>
     <package name="src">
       <metrics statements="13" coveredstatements="13" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\app.ts">
@@ -44,9 +44,9 @@
       </file>
     </package>
     <package name="src.controllers">
-      <metrics statements="134" coveredstatements="130" conditionals="12" coveredconditionals="11" methods="5" coveredmethods="5"/>
+      <metrics statements="128" coveredstatements="128" conditionals="11" coveredconditionals="11" methods="5" coveredmethods="5"/>
       <file name="PersonsAndRelationshipsController.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\controllers\PersonsAndRelationshipsController.ts">
-        <metrics statements="26" coveredstatements="22" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <metrics statements="20" coveredstatements="20" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -64,15 +64,9 @@
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="cond" truecount="0" falsecount="1"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
       </file>
       <file name="PersonsController.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\controllers\PersonsController.ts">
         <metrics statements="45" coveredstatements="45" conditionals="5" coveredconditionals="5" methods="2" coveredmethods="2"/>
@@ -214,7 +208,7 @@
       </file>
     </package>
     <package name="src.repositories.implementations">
-      <metrics statements="151" coveredstatements="151" conditionals="28" coveredconditionals="27" methods="11" coveredmethods="11"/>
+      <metrics statements="151" coveredstatements="151" conditionals="29" coveredconditionals="29" methods="11" coveredmethods="11"/>
       <file name="PersonsRepository.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\repositories\implementations\PersonsRepository.ts">
         <metrics statements="38" coveredstatements="38" conditionals="5" coveredconditionals="5" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
@@ -257,7 +251,7 @@
         <line num="38" count="1" type="stmt"/>
       </file>
       <file name="RelationshipsRepository.ts" path="C:\Users\yesminmarie\Documents\Estudos\Desafio_Ewally\friend-recommender\src\repositories\implementations\RelationshipsRepository.ts">
-        <metrics statements="113" coveredstatements="113" conditionals="23" coveredconditionals="22" methods="7" coveredmethods="7"/>
+        <metrics statements="113" coveredstatements="113" conditionals="24" coveredconditionals="24" methods="7" coveredmethods="7"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -314,8 +308,8 @@
         <line num="54" count="2" type="stmt"/>
         <line num="55" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="56" count="4" type="stmt"/>
-        <line num="57" count="4" type="cond" truecount="0" falsecount="1"/>
-        <line num="58" count="4" type="stmt"/>
+        <line num="57" count="4" type="cond" truecount="1" falsecount="0"/>
+        <line num="58" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="59" count="2" type="stmt"/>
         <line num="60" count="2" type="stmt"/>
         <line num="61" count="2" type="stmt"/>
@@ -331,7 +325,7 @@
         <line num="71" count="4" type="stmt"/>
         <line num="72" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="73" count="24" type="cond" truecount="1" falsecount="0"/>
-        <line num="74" count="16" type="stmt"/>
+        <line num="74" count="15" type="stmt"/>
         <line num="75" count="4" type="stmt"/>
         <line num="76" count="4" type="cond" truecount="1" falsecount="0"/>
         <line num="77" count="14" type="stmt"/>

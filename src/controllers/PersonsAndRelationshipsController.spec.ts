@@ -1,6 +1,7 @@
 import request from "supertest";
 
 import { app } from "../app";
+import { PersonsAndRelationshipsController } from "./PersonsAndRelationshipsController";
 
 describe("Persons and Relationships Controller", () => {
     it("Should be able to delete persons and relationships", async () => {

@@ -8,18 +8,12 @@ class PersonsAndRelationshipsController {
         request: Request,
         response: Response
     ): Promise<Response> {
-        try {
-            const deletePersonsAndRelationships = container.resolve(
-                DeletePersonsAndRelationshipsService
-            );
-            deletePersonsAndRelationships.execute();
+        const deletePersonsAndRelationships = container.resolve(
+            DeletePersonsAndRelationshipsService
+        );
+        deletePersonsAndRelationships.execute();
 
-            return response.status(200).send();
-        } catch (err) {
-            return response.status(400).json({
-                error: err.message,
-            });
-        }
+        return response.status(200).send();
     }
 }
 

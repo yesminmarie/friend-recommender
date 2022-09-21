@@ -50,8 +50,8 @@ describe("Show recommendations", () => {
         });
 
         await relationshipsRepository.create({
-            cpf1: "12345678901",
-            cpf2: "12345678903",
+            cpf1: "12345678903",
+            cpf2: "12345678901",
         });
 
         await relationshipsRepository.create({
