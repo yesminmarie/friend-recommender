@@ -32,21 +32,21 @@ class RelationshipsRepository implements IRelationshipsRepository {
     }
 
     public async getRecommendations(cpf: string): Promise<string[]> {
-        const cpfFriends = this.getCpfFriends(cpf);
+        const cpfsOfUserFriends = this.getCpfsOfUserFriends(cpf);
 
-        const cpfRelationshipsFriends = this.getCpfRelationshipsFriends(
-            cpfFriends,
+        const cpfsOfFriendsOfUserFriends = this.getCpfsOfFriendsOfUserFriends(
+            cpfsOfUserFriends,
             cpf
         );
 
-        const cpfSortedByRelevance = this.sortByRelevance(
-            cpfRelationshipsFriends
+        const cpfsSortedByRelevance = this.sortByRelevance(
+            cpfsOfFriendsOfUserFriends
         );
 
-        return cpfSortedByRelevance;
+        return cpfsSortedByRelevance;
     }
 
-    private getCpfFriends(cpf: string): string[] {
+    private getCpfsOfUserFriends(cpf: string): string[] {
         const friends = this.relationships
             .filter(
                 (relationship) =>
@@ -60,13 +60,13 @@ class RelationshipsRepository implements IRelationshipsRepository {
         return friends;
     }
 
-    private getCpfRelationshipsFriends(
-        cpfFriends: string[],
+    private getCpfsOfFriendsOfUserFriends(
+        cpfsOfUserFriends: string[],
         cpf: string
     ): string[] {
-        let cpfRelationshipsFriends = [];
+        let cpfsOfFriendsOfUserFriends = [];
 
-        cpfFriends.forEach((cpfFriend) => {
+        cpfsOfUserFriends.forEach((cpfFriend) => {
             const cpfFriendRelationship = this.relationships
                 .filter(
                     (relationship) =>
@@ -81,18 +81,18 @@ class RelationshipsRepository implements IRelationshipsRepository {
                 .filter(
                     (cpfRelationship) =>
                         cpfRelationship !== cpf &&
-                        !cpfFriends.includes(cpfRelationship)
+                        !cpfsOfUserFriends.includes(cpfRelationship)
                 );
-            cpfRelationshipsFriends = [
-                ...cpfRelationshipsFriends,
+            cpfsOfFriendsOfUserFriends = [
+                ...cpfsOfFriendsOfUserFriends,
                 ...cpfFriendRelationship,
             ];
         });
-        return cpfRelationshipsFriends;
+        return cpfsOfFriendsOfUserFriends;
     }
 
-    private sortByRelevance(cpfRelationshipsFriends: string[]): string[] {
-        const countedCpf = cpfRelationshipsFriends.reduce(
+    private sortByRelevance(cpfsOfFriendsOfUserFriends: string[]): string[] {
+        const countedCpf = cpfsOfFriendsOfUserFriends.reduce(
             (accumulator, cpf) => {
                 accumulator[cpf] = (accumulator[cpf] ?? 0) + 1;
                 return accumulator;

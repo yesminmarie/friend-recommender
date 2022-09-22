@@ -341,8 +341,8 @@ FN:10,RelationshipsRepository
 FN:14,create
 FN:30,delete
 FN:34,getRecommendations
-FN:49,getCpfFriends
-FN:63,getCpfRelationshipsFriends
+FN:49,getCpfsOfUserFriends
+FN:63,getCpfsOfFriendsOfUserFriends
 FN:94,sortByRelevance
 FNF:7
 FNH:7
@@ -350,8 +350,8 @@ FNDA:9,RelationshipsRepository
 FNDA:17,create
 FNDA:2,delete
 FNDA:2,getRecommendations
-FNDA:2,getCpfFriends
-FNDA:2,getCpfRelationshipsFriends
+FNDA:2,getCpfsOfUserFriends
+FNDA:2,getCpfsOfFriendsOfUserFriends
 FNDA:2,sortByRelevance
 DA:1,1
 DA:2,1
