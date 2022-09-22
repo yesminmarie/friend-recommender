@@ -71,5 +71,20 @@ describe("Recommendations Controller", () => {
             .get("/recommendations/12345678906")
             .send();
         expect(response.status).toBe(404);
+        expect(response.body).toEqual({
+            status: "error",
+            message: "User not found!",
+        });
+    });
+
+    it("Should not be able to show the friends recommendations from cpf with non-numeric characters", async () => {
+        const response = await request(app)
+            .get("/recommendations/1234567890a")
+            .send();
+        expect(response.status).toBe(400);
+        expect(response.body).toEqual({
+            status: "error",
+            message: "The informed cpf does not have 11 numeric digits!",
+        });
     });
 });

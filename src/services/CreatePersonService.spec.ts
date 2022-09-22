@@ -31,9 +31,12 @@ describe("Create person", () => {
 
         await createPersonService.execute(personData);
 
-        await expect(createPersonService.execute(personData)).rejects.toEqual(
-            new Error("User already exists!")
-        );
+        await expect(
+            createPersonService.execute(personData)
+        ).rejects.toMatchObject({
+            statusCode: 400,
+            message: "User already exists!",
+        });
     });
 
     it("Should not be able to create a person with a cpf less then 11 digits", async () => {
@@ -42,9 +45,12 @@ describe("Create person", () => {
             name: "Maria",
         };
 
-        await expect(createPersonService.execute(personData)).rejects.toEqual(
-            new Error("The informed cpf does not have 11 numeric digits!")
-        );
+        await expect(
+            createPersonService.execute(personData)
+        ).rejects.toMatchObject({
+            statusCode: 400,
+            message: "The informed cpf does not have 11 numeric digits!",
+        });
     });
 
     it("Should not be able to create a person with a cpf greater than 11 digits", async () => {
@@ -53,9 +59,12 @@ describe("Create person", () => {
             name: "Maria",
         };
 
-        await expect(createPersonService.execute(personData)).rejects.toEqual(
-            new Error("The informed cpf does not have 11 numeric digits!")
-        );
+        await expect(
+            createPersonService.execute(personData)
+        ).rejects.toMatchObject({
+            statusCode: 400,
+            message: "The informed cpf does not have 11 numeric digits!",
+        });
     });
 
     it("Should not be able to create a person with cpf with non-numeric characters", async () => {
@@ -64,8 +73,11 @@ describe("Create person", () => {
             name: "Maria",
         };
 
-        await expect(createPersonService.execute(personData)).rejects.toEqual(
-            new Error("The informed cpf does not have 11 numeric digits!")
-        );
+        await expect(
+            createPersonService.execute(personData)
+        ).rejects.toMatchObject({
+            statusCode: 400,
+            message: "The informed cpf does not have 11 numeric digits!",
+        });
     });
 });

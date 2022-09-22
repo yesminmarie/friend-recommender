@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { injectable, inject } from "tsyringe";
 
+import AppError from "../errors/AppError";
 import { Person } from "../model/Person";
 import { IPersonsRepository } from "../repositories/IPersonsRepository";
 
@@ -20,14 +21,15 @@ class CreatePersonService {
         const personAlreadyExists = await this.personsRepository.findByCpf(cpf);
 
         if (personAlreadyExists) {
-            throw new Error("User already exists!");
+            throw new AppError("User already exists!", 400);
         }
 
         const regex = /^[0-9]{11}$/;
 
         if (!regex.test(cpf)) {
-            throw new Error(
-                "The informed cpf does not have 11 numeric digits!"
+            throw new AppError(
+                "The informed cpf does not have 11 numeric digits!",
+                400
             );
         }
 

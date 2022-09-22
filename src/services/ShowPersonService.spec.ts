@@ -30,6 +30,9 @@ describe("Show persons", () => {
             showPersonService.execute({
                 cpf: "12345678901",
             })
-        ).rejects.toEqual(new Error("User not found!"));
+        ).rejects.toMatchObject({
+            statusCode: 404,
+            message: "User not found!",
+        });
     });
 });

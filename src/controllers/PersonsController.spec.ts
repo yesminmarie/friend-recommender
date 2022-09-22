@@ -19,7 +19,10 @@ describe("Person Controller", () => {
         });
 
         expect(response.status).toBe(400);
-        expect(response.body).toEqual({ error: "User already exists!" });
+        expect(response.body).toEqual({
+            status: "error",
+            message: "User already exists!",
+        });
     });
 
     it("Should not be able to create a person with cpf with non-numeric characters", async () => {
@@ -30,7 +33,8 @@ describe("Person Controller", () => {
 
         expect(response.status).toBe(400);
         expect(response.body).toEqual({
-            error: "The informed cpf does not have 11 numeric digits!",
+            status: "error",
+            message: "The informed cpf does not have 11 numeric digits!",
         });
     });
 
@@ -42,5 +46,9 @@ describe("Person Controller", () => {
     it("Should not be able to show the person from non-existing cpf", async () => {
         const response = await request(app).get("/person/12345678902").send();
         expect(response.status).toBe(404);
+        expect(response.body).toEqual({
+            status: "error",
+            message: "User not found!",
+        });
     });
 });

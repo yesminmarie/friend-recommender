@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { injectable, inject } from "tsyringe";
 
+import AppError from "../errors/AppError";
 import { Relationship } from "../model/Relationship";
 import { IPersonsRepository } from "../repositories/IPersonsRepository";
 import { IRelationshipsRepository } from "../repositories/IRelationshipsRepository";
@@ -29,7 +30,7 @@ class CreateRelationshipService {
         );
 
         if (!personAlreadyExistsCpf1 || !personAlreadyExistsCpf2) {
-            throw new Error("User not found!");
+            throw new AppError("User not found!", 404);
         }
 
         const relationship = await this.relationshipRepository.create({

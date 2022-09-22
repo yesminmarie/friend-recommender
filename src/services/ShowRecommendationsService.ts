@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import { injectable, inject } from "tsyringe";
 
+import AppError from "../errors/AppError";
 import { IPersonsRepository } from "../repositories/IPersonsRepository";
 import { IRelationshipsRepository } from "../repositories/IRelationshipsRepository";
 
@@ -24,12 +25,13 @@ class ShowRecommendationsService {
         const regex = /^[0-9]{11}$/;
 
         if (!regex.test(cpf)) {
-            throw new Error(
-                "The informed cpf does not have 11 numeric digits!"
+            throw new AppError(
+                "The informed cpf does not have 11 numeric digits!",
+                400
             );
         }
         if (!personAlreadyExists) {
-            throw new Error("User not found!");
+            throw new AppError("User not found!", 404);
         }
 
         const relationshipsOfCpf =

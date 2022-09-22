@@ -54,6 +54,9 @@ describe("Create relationship", () => {
 
         await expect(
             createRelationshipService.execute(relationshipData)
-        ).rejects.toEqual(new Error("User not found!"));
+        ).rejects.toMatchObject({
+            statusCode: 404,
+            message: "User not found!",
+        });
     });
 });

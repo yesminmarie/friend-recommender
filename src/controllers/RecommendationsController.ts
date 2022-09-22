@@ -8,23 +8,17 @@ class RecommendationsController {
         request: Request,
         response: Response
     ): Promise<Response> {
-        try {
-            const { cpf } = request.params;
+        const { cpf } = request.params;
 
-            const showRecommendationsService = container.resolve(
-                ShowRecommendationsService
-            );
+        const showRecommendationsService = container.resolve(
+            ShowRecommendationsService
+        );
 
-            const recommendations = await showRecommendationsService.execute({
-                cpf,
-            });
+        const recommendations = await showRecommendationsService.execute({
+            cpf,
+        });
 
-            return response.json(recommendations);
-        } catch (err) {
-            return response.status(404).json({
-                error: err.message,
-            });
-        }
+        return response.status(200).json(recommendations);
     }
 }
 

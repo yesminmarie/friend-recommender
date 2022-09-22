@@ -27,5 +27,9 @@ describe("Relationship Controller", () => {
             cpf2: "12345678903",
         });
         expect(response.status).toBe(404);
+        expect(response.body).toEqual({
+            status: "error",
+            message: "User not found!",
+        });
     });
 });

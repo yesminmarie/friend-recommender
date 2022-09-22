@@ -86,7 +86,10 @@ describe("Show recommendations", () => {
             showRecommendationsService.execute({
                 cpf: "12345678901",
             })
-        ).rejects.toEqual(new Error("User not found!"));
+        ).rejects.toMatchObject({
+            statusCode: 404,
+            message: "User not found!",
+        });
     });
 
     it("Should not be able to show the friends recommendations from cpf with non-numeric characters", async () => {
@@ -94,8 +97,9 @@ describe("Show recommendations", () => {
             showRecommendationsService.execute({
                 cpf: "1234567890a",
             })
-        ).rejects.toEqual(
-            new Error("The informed cpf does not have 11 numeric digits!")
-        );
+        ).rejects.toMatchObject({
+            statusCode: 400,
+            message: "The informed cpf does not have 11 numeric digits!",
+        });
     });
 });

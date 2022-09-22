@@ -2,6 +2,7 @@ import "reflect-metadata";
 
 import { injectable, inject } from "tsyringe";
 
+import AppError from "../errors/AppError";
 import { Person } from "../model/Person";
 import { IPersonsRepository } from "../repositories/IPersonsRepository";
 
@@ -20,7 +21,7 @@ class ShowPersonService {
         const personAlreadyExists = await this.personsRepository.findByCpf(cpf);
 
         if (!personAlreadyExists) {
-            throw new Error("User not found!");
+            throw new AppError("User not found!", 404);
         }
 
         return personAlreadyExists;
