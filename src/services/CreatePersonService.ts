@@ -18,12 +18,24 @@ class CreatePersonService {
     ) {}
 
     public async execute({ cpf, name }: IRequest): Promise<Person> {
+        await this.checkIfPersonAlreadyExists(cpf);
+
+        await this.checkIfCpfHasElevenNumericDigits(cpf);
+
+        const person = await this.personsRepository.create({ cpf, name });
+
+        return person;
+    }
+
+    private async checkIfPersonAlreadyExists(cpf: string): Promise<void> {
         const personAlreadyExists = await this.personsRepository.findByCpf(cpf);
 
         if (personAlreadyExists) {
             throw new AppError("User already exists!", 400);
         }
+    }
 
+    private async checkIfCpfHasElevenNumericDigits(cpf: string): Promise<void> {
         const regex = /^[0-9]{11}$/;
 
         if (!regex.test(cpf)) {
@@ -32,10 +44,6 @@ class CreatePersonService {
                 400
             );
         }
-
-        const person = await this.personsRepository.create({ cpf, name });
-
-        return person;
     }
 }
 
