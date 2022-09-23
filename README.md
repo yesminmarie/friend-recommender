@@ -43,8 +43,9 @@
 
 - Endpoint: http://localhost:3000/relationship
 - HTTP Method: POST
-- Retorna código HTTP CREATED (201) em caso de sucesso
+- Retorna código HTTP CREATED (201) em caso de sucesso.
 - Retorna código HTTP NOT FOUND (404) caso um dos usuários não exista.
+- Retorna código HTTP BAD REQUEST (400) caso o relacionamento já exista ou se os dois CPFs inseridos forem iguais.
 - Entrada:
 ```bash
 {
