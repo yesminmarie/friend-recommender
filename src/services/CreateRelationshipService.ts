@@ -22,6 +22,18 @@ class CreateRelationshipService {
     ) {}
 
     public async execute({ cpf1, cpf2 }: IRequest): Promise<Relationship> {
+        await this.checkIfUsersExist(cpf1, cpf2);
+
+        await this.checkIfRelationshipAlreadyExists(cpf1, cpf2);
+
+        const relationship = await this.relationshipRepository.create({
+            cpf1,
+            cpf2,
+        });
+        return relationship;
+    }
+
+    private async checkIfUsersExist(cpf1: string, cpf2: string): Promise<void> {
         const personAlreadyExistsCpf1 = await this.personsRepository.findByCpf(
             cpf1
         );
@@ -30,14 +42,20 @@ class CreateRelationshipService {
         );
 
         if (!personAlreadyExistsCpf1 || !personAlreadyExistsCpf2) {
-            throw new AppError("User not found!", 404);
+            throw new AppError("User not found! Check the provided CPFs.", 404);
         }
+    }
 
-        const relationship = await this.relationshipRepository.create({
-            cpf1,
-            cpf2,
-        });
-        return relationship;
+    private async checkIfRelationshipAlreadyExists(
+        cpf1: string,
+        cpf2: string
+    ): Promise<void> {
+        const relationshipAlreadyExists =
+            await this.relationshipRepository.findRelationship(cpf1, cpf2);
+
+        if (relationshipAlreadyExists) {
+            throw new AppError("Relationship already exists!", 400);
+        }
     }
 }
 

@@ -56,7 +56,33 @@ describe("Create relationship", () => {
             createRelationshipService.execute(relationshipData)
         ).rejects.toMatchObject({
             statusCode: 404,
-            message: "User not found!",
+            message: "User not found! Check the provided CPFs.",
+        });
+    });
+
+    it("Should not be able to create an existing relationship", async () => {
+        await personsRepository.create({
+            cpf: "12345678901",
+            name: "Maria",
+        });
+
+        await personsRepository.create({
+            cpf: "12345678902",
+            name: "Pedro",
+        });
+
+        const relationshipData: Relationship = {
+            cpf1: "12345678901",
+            cpf2: "12345678902",
+        };
+
+        await createRelationshipService.execute(relationshipData);
+
+        await expect(
+            createRelationshipService.execute(relationshipData)
+        ).rejects.toMatchObject({
+            statusCode: 400,
+            message: "Relationship already exists!",
         });
     });
 });

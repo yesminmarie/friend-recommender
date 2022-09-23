@@ -46,6 +46,19 @@ class RelationshipsRepository implements IRelationshipsRepository {
         return cpfsSortedByRelevance;
     }
 
+    public async findRelationship(
+        cpf1: string,
+        cpf2: string
+    ): Promise<Relationship | undefined> {
+        const relationship = this.relationships.find(
+            (relationship) =>
+                (relationship.cpf1 === cpf1 && relationship.cpf2 === cpf2) ||
+                (relationship.cpf2 === cpf1 && relationship.cpf1 === cpf2)
+        );
+
+        return relationship;
+    }
+
     private getCpfsOfUserFriends(cpf: string): string[] {
         const friends = this.relationships
             .filter(

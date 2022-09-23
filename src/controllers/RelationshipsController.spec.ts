@@ -29,7 +29,7 @@ describe("Relationship Controller", () => {
         expect(response.status).toBe(404);
         expect(response.body).toEqual({
             status: "error",
-            message: "User not found!",
+            message: "User not found! Check the provided CPFs.",
         });
     });
 });

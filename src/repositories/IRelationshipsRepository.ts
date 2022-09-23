@@ -12,6 +12,10 @@ interface IRelationshipsRepository {
         cpf2,
     }: ICreateRelationshipRepositoryDTO): Promise<Relationship>;
     delete(): Promise<void>;
+    findRelationship(
+        cpf1: string,
+        cpf2: string
+    ): Promise<Relationship | undefined>;
 }
 
 export { IRelationshipsRepository, ICreateRelationshipRepositoryDTO };
