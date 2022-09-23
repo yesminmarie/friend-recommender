@@ -24,6 +24,8 @@ class CreateRelationshipService {
     public async execute({ cpf1, cpf2 }: IRequest): Promise<Relationship> {
         await this.checkIfUsersExist(cpf1, cpf2);
 
+        await this.checkIfTheTwoProvidedCpfAreTheSame(cpf1, cpf2);
+
         await this.checkIfRelationshipAlreadyExists(cpf1, cpf2);
 
         const relationship = await this.relationshipRepository.create({
@@ -55,6 +57,15 @@ class CreateRelationshipService {
 
         if (relationshipAlreadyExists) {
             throw new AppError("Relationship already exists!", 400);
+        }
+    }
+
+    private async checkIfTheTwoProvidedCpfAreTheSame(
+        cpf1: string,
+        cpf2: string
+    ): Promise<void> {
+        if (cpf1 === cpf2) {
+            throw new AppError("The two provided CPFs are the same!", 400);
         }
     }
 }

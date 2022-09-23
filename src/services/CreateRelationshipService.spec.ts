@@ -85,4 +85,23 @@ describe("Create relationship", () => {
             message: "Relationship already exists!",
         });
     });
+
+    it("Should not be able to create a relationship with two same CPFs", async () => {
+        await personsRepository.create({
+            cpf: "12345678901",
+            name: "Maria",
+        });
+
+        const relationshipData: Relationship = {
+            cpf1: "12345678901",
+            cpf2: "12345678901",
+        };
+
+        await expect(
+            createRelationshipService.execute(relationshipData)
+        ).rejects.toMatchObject({
+            statusCode: 400,
+            message: "The two provided CPFs are the same!",
+        });
+    });
 });
