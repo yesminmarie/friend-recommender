@@ -20,8 +20,24 @@ class ShowRecommendationsService {
     ) {}
 
     public async execute({ cpf }: IRequest): Promise<string[]> {
+        await this.checkIfCpfHasElevenNumericDigits(cpf);
+
+        await this.checkIfPersonAlreadyExists(cpf);
+
+        const recommendations =
+            await this.relationshipRepository.getRecommendations(cpf);
+        return recommendations;
+    }
+
+    private async checkIfPersonAlreadyExists(cpf: string): Promise<void> {
         const personAlreadyExists = await this.personsRepository.findByCpf(cpf);
 
+        if (!personAlreadyExists) {
+            throw new AppError("User not found!", 404);
+        }
+    }
+
+    private async checkIfCpfHasElevenNumericDigits(cpf: string): Promise<void> {
         const regex = /^[0-9]{11}$/;
 
         if (!regex.test(cpf)) {
@@ -30,13 +46,6 @@ class ShowRecommendationsService {
                 400
             );
         }
-        if (!personAlreadyExists) {
-            throw new AppError("User not found!", 404);
-        }
-
-        const relationshipsOfCpf =
-            await this.relationshipRepository.getRecommendations(cpf);
-        return relationshipsOfCpf;
     }
 }
 
