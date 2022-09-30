@@ -1,5 +1,5 @@
 TN:
-SF:src\app.ts
+SF:src/app.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -39,7 +39,7 @@ BRF:2
 BRH:1
 end_of_record
 TN:
-SF:src\container\index.ts
+SF:src/container/index.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -64,7 +64,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\controllers\PersonsAndRelationshipsController.ts
+SF:src/controllers/PersonsAndRelationshipsController.ts
 FN:7,clean
 FNF:1
 FNH:1
@@ -96,7 +96,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src\controllers\PersonsController.ts
+SF:src/controllers/PersonsController.ts
 FN:8,create
 FN:20,getPerson
 FNF:2
@@ -146,7 +146,7 @@ BRF:4
 BRH:4
 end_of_record
 TN:
-SF:src\controllers\RecommendationsController.ts
+SF:src/controllers/RecommendationsController.ts
 FN:7,getRecommendations
 FNF:1
 FNH:1
@@ -184,7 +184,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:src\controllers\RelationshipsController.ts
+SF:src/controllers/RelationshipsController.ts
 FN:7,create
 FNF:1
 FNH:1
@@ -223,7 +223,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:src\errors\AppError.ts
+SF:src/errors/AppError.ts
 FN:5,AppError
 FNF:1
 FNH:1
@@ -246,7 +246,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src\model\Person.ts
+SF:src/model/Person.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -261,7 +261,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\model\Relationship.ts
+SF:src/model/Relationship.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -276,7 +276,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\repositories\implementations\PersonsRepository.ts
+SF:src/repositories/implementations/PersonsRepository.ts
 FN:10,PersonsRepository
 FN:14,findByCpf
 FN:18,create
@@ -336,7 +336,7 @@ BRF:5
 BRH:5
 end_of_record
 TN:
-SF:src\repositories\implementations\RelationshipsRepository.ts
+SF:src/repositories/implementations/RelationshipsRepository.ts
 FN:10,RelationshipsRepository
 FN:14,create
 FN:30,delete
@@ -516,7 +516,7 @@ BRF:29
 BRH:29
 end_of_record
 TN:
-SF:src\routes\cleanPersonsAndRelationships.routes.ts
+SF:src/routes/cleanPersonsAndRelationships.routes.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -540,7 +540,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src\routes\index.ts
+SF:src/routes/index.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -564,7 +564,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:src\routes\person.routes.ts
+SF:src/routes/person.routes.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -592,7 +592,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:src\routes\recommendations.routes.ts
+SF:src/routes/recommendations.routes.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -615,7 +615,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src\routes\relationship.routes.ts
+SF:src/routes/relationship.routes.ts
 FNF:0
 FNH:0
 DA:1,1
@@ -638,7 +638,7 @@ BRF:1
 BRH:1
 end_of_record
 TN:
-SF:src\services\CreatePersonService.ts
+SF:src/services/CreatePersonService.ts
 FN:15,CreatePersonService
 FN:20,execute
 FN:30,checkIfPersonAlreadyExists
@@ -713,7 +713,7 @@ BRF:8
 BRH:8
 end_of_record
 TN:
-SF:src\services\CreateRelationshipService.ts
+SF:src/services/CreateRelationshipService.ts
 FN:16,CreateRelationshipService
 FN:24,execute
 FN:38,checkIfUsersExist
@@ -817,7 +817,7 @@ BRF:12
 BRH:12
 end_of_record
 TN:
-SF:src\services\DeletePersonsAndRelationshipsService.ts
+SF:src/services/DeletePersonsAndRelationshipsService.ts
 FN:10,DeletePersonsAndRelationshipsService
 FN:18,execute
 FNF:2
@@ -856,7 +856,7 @@ BRF:2
 BRH:2
 end_of_record
 TN:
-SF:src\services\ShowPersonService.ts
+SF:src/services/ShowPersonService.ts
 FN:15,ShowPersonService
 FN:20,execute
 FNF:2
@@ -903,7 +903,7 @@ BRF:3
 BRH:3
 end_of_record
 TN:
-SF:src\services\ShowRecommendationsService.ts
+SF:src/services/ShowRecommendationsService.ts
 FN:14,ShowRecommendationsService
 FN:22,execute
 FN:32,checkIfPersonAlreadyExists
