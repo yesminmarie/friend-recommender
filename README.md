@@ -91,13 +91,28 @@
 - [Eslint](https://eslint.org/ "Eslint")
 
 <h1 id="how-to-run">Como executar a aplicação</h1>
+<p>Primeiro faça o clone deste repositório: </p>
 
 ```bash
-# Faça o clone deste repositório
 $ git clone https://github.com/yesminmarie/friend-recommender
+```
+<p> Se preferir, você pode executar esta aplicação utilizando o Docker Compose. Para isso, siga os próximos passos: </p>
 
+```bash
+# Execute o comando a seguir para subir a aplicação:
+$ docker-compose up 
+
+# Execute o comando a seguir para rodar os testes:
+# Este comando criará um container temporário que será removido após a conclusão da execução dos testes.
+$ docker-compose run --rm app yarn test
+```
+<p> Caso escolha executar a aplicação sem o Docker Compose, siga os próximos passos: </p>
+
+```bash
 # Entre na pasta do projeto
 $ cd friend-recommender
+
+# Você pode usar npm ou yarn para instalar as dependências, executar a aplicação e rodar os testes.
 
 # Instale as dependências (npm)
 $ npm install
@@ -105,16 +120,16 @@ $ npm install
 # Instale as dependências (yarn)
 $ yarn
 
-# Executar o projeto (npm)
+# Execute o projeto (npm)
 $ npm run dev
 
-# Executar o projeto (yarn)
+# Execute o projeto (yarn)
 $ yarn dev
 
-# Executar os testes (npm)
+# Execute os testes (npm)
 npm test
 
-# Executar os testes (yarn)
+# Execute os testes (yarn)
 yarn test
 ```
 <hr>
