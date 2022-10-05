@@ -89,6 +89,10 @@
 - [Tsyringe](https://github.com/microsoft/tsyringe/ "Tsyringe")
 - [Jest](https://jestjs.io/ "Jest")
 - [Eslint](https://eslint.org/ "Eslint")
+- [Swagger](https://swagger.io/ "Swagger")
+
+<h1>Documentação da API com Swagger</h1>
+<p>Após executar a aplicação, a documentação da API com Swagger pode ser acessada pelo seguinte endereço: <a>http://localhost:3000/api-docs </a></p>
 
 <h1 id="how-to-run">Como executar a aplicação</h1>
 <p>Primeiro faça o clone deste repositório: </p>

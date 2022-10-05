@@ -1,0 +1,169 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Friend-Recommender Documentation",
+        "description": "This is an API friend recommender in which a person can get suggestions for new friends based on existing friendships.",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/person": {
+            "post": {
+                "tags": ["Person"],
+                "summary": "Create a person",
+                "description": "Create a new person, receiving a CPF and a name.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "cpf": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "cpf": "12345678901",
+                                    "name": "Maria"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created."
+                    },
+                    "400": {
+                        "description": "User already exists or the informed cpf does not have 11 numeric digits."
+                    }
+                }
+            }
+        },
+        "/person/{cpf}": { 
+            "get": {
+                "tags": ["Person"],
+                "summary": "Get person",
+                "description": "This route receives a CPF and, if the user exists, returns his data (name and CPF). Otherwise, it returns an error with status code 404.",
+                "parameters": [
+                    {
+                    "name": "cpf",
+                    "in": "path",
+                    "description": "CPF of person",
+                    "required": true,
+                    "schema": {
+                        "type": "string"
+                    },
+                    "style": "simple"
+                }
+            ],
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "cpf": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        }
+                                    }
+                                } 
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "User not found."
+                    }
+                }
+            }
+        },
+        "/relationship": {
+            "post": {
+                "tags": ["Relationship"],
+                "summary": "Create a relationship",
+                "description": "Create a new relationship, receiving two CPFs.",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "cpf1": {
+                                        "type": "string"
+                                    },
+                                    "cpf2": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "cpf1": "12345678901",
+                                    "cpf2": "12345678902"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created."
+                    },
+                    "400": {
+                        "description": "Relationship already exists or the two provided CPFs are the same."
+                    },
+                    "404": {
+                        "description": "User not found."
+                    }
+                }
+            }
+        },
+        "/clean": {
+            "delete": {
+                "tags": ["Persons and Relationships"],
+                "summary": "Delete all persons and relationships",
+                "description": "Delete all persons and relationships.",
+                "responses": {
+                    "200": {
+                        "description": "Sucess"
+                    }
+                }
+            }
+        },
+        "/recommendations/{cpf}": {
+            "get": {
+                "tags": ["Relationship"],
+                "summary": "Get Recommendations",
+                "description": "This route receives a CPF and, if the user exists, returns an Array containing the list of CPFs of all friends of the informed user's friends who are not his friends, ordered in descending order by relevance. If the user informed does not exist, an error with status code 404 will be returned. If the cpf informed does not consist of 11 numeric digits, an error with status code 400 will be returned.",
+                "parameters": [
+                    {
+                        "name": "cpf",
+                        "in": "path",
+                        "description": "CPF of person",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "style": "simple"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Success"
+                    },
+                    "400": {
+                        "description": "The informed cpf does not have 11 numeric digits."
+                    },
+                    "404": {
+                        "description": "User not found."
+                    }
+                }
+            }
+        }
+    }
+}
