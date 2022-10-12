@@ -99,6 +99,9 @@
 
 ```bash
 $ git clone https://github.com/yesminmarie/friend-recommender
+
+# Entre na pasta do projeto
+$ cd friend-recommender
 ```
 <p> Se preferir, você pode executar esta aplicação utilizando o Docker Compose. Para isso, siga os próximos passos: </p>
 
@@ -113,9 +116,6 @@ $ docker-compose run --rm app yarn test
 <p> Caso escolha executar a aplicação sem o Docker Compose, siga os próximos passos: </p>
 
 ```bash
-# Entre na pasta do projeto
-$ cd friend-recommender
-
 # Você pode usar npm ou yarn para instalar as dependências, executar a aplicação e rodar os testes.
 
 # Instale as dependências (npm)
